@@ -16,6 +16,8 @@ Welcome to the Sui Capture the Flag challenge! This CTF is designed to test and 
     - [Instructions](#instructions)
   - [Merchant Challenge](#merchant-challenge)
     - [Instructions](#instructions-1)
+  - [Lootboxes Challenge](#lootboxes-challenge)
+    - [Instructions](#instructions-2)
 
 ## Environment Setup
 
@@ -99,6 +101,23 @@ Buy a flag using USDC tokens.
 2. Acquire USDC tokens on testnet.
 3. Implement your solution in [`scripts/src/merchant.ts`](./scripts/src/merchant.ts).
 4. Run your script with `pnpm run merchant` to extract the flag.
+
+## Lootboxes Challenge
+
+Open lootboxes until you get a flag.
+
+### Instructions
+
+1. Examine the [`lootboxes.move`](./contracts/sources/lootboxes.move) contract carefully.
+2. Create new lootboxes until you get a flag.
+3. Implement your solution in [`scripts/src/lootboxes.ts`](./scripts/src/lootboxes.ts).
+4. Run your script with `pnpm run lootboxes` to extract the flag.
+
+### Hints
+
+1. Every lootbox has a 1 in 100 chance of containing a flag.
+2. Use this [page](https://docs.sui.io/guides/developer/advanced/randomness-onchain#programmable-transaction-block-ptb-restrictions) to learn more about Sui's on-chain randomness. Especially if you are running into this error: `PostRandomCommandRestrictions`
+3. A mistake has been made in the `lootboxes.move` contract regarding the use of the `Random` object.
 
 ---
 
