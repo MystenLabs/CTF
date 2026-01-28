@@ -14,6 +14,8 @@ Welcome to the Sui Capture the Flag challenge! This CTF is designed to test and 
     - [Adding Challenges](#adding-challenges)
   - [Moving Window Challenge](#moving-window-challenge)
     - [Instructions](#instructions)
+  - [Merchant Challenge](#merchant-challenge)
+    - [Instructions](#instructions-1)
 
 ## Environment Setup
 
@@ -86,6 +88,17 @@ Extract the flag during the moving window.
 2. Determine when the window is open.
 3. Implement your solution in [`scripts/src/moving_window.ts`](./scripts/src/moving_window.ts).
 4. Run your script with `pnpm run moving-window` to extract the flag.
+
+## Merchant Challenge
+
+Buy a flag using USDC tokens.
+
+### Instructions
+
+1. Examine the [`merchant.move`](./contracts/sources/merchant.move) contract carefully.
+2. Acquire USDC tokens on testnet.
+3. Implement your solution in [`scripts/src/merchant.ts`](./scripts/src/merchant.ts).
+4. Run your script with `pnpm run merchant` to extract the flag.
 
 ---
 

@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "init-keypair": "tsx src/init.ts",
-    "moving-window": "tsx src/moving_window.ts"
+    "moving-window": "tsx src/moving_window.ts",
+    "merchant": "tsx src/merchant.ts"
   },
   "dependencies": {
     "@mysten/sui": "^1.8.0",
