@@ -11,14 +11,13 @@ Welcome to the Sui Capture the Flag challenge! This CTF is designed to test and 
     - [Funding Your Account](#funding-your-account)
   - [Challenges](#challenges)
     - [Structure](#structure)
-    - [Adding Challenges](#adding-challenges)
   - [Moving Window Challenge](#moving-window-challenge)
     - [Instructions](#instructions)
   - [Merchant Challenge](#merchant-challenge)
     - [Instructions](#instructions-1)
   - [Lootboxes Challenge](#lootboxes-challenge)
     - [Instructions](#instructions-2)
-    - [Hints](#hints)
+    - [Hint](#hint)
   - [Staking Challenge](#staking-challenge)
     - [Instructions](#instructions-3)
 
@@ -51,6 +50,8 @@ This will generate a new Ed25519 keypair and save it to `keypair.json` in the sc
 
 ### Funding Your Account
 
+**If you are at a hackathon, ask your Sui rep for testnet tokens!**
+
 After generating your keypair, you'll need to request testnet tokens from one of these faucets:
 
 - [n1stake faucet](https://faucet.n1stake.com)
@@ -66,6 +67,8 @@ https://suiscan.xyz/testnet/account/{your-address}
 
 All challenges are Move modules within the single `ctf` package located in the `contracts/` directory. This architecture is required because the flag module uses `public(package)` visibility, meaning only modules in the same package can create flags.
 
+All challenges are independent of each other and can be done in any order!
+
 ### Structure
 
 ```
@@ -75,13 +78,6 @@ contracts/
     ├── flag.move      # Base flag module
     └── ...            # Challenge modules will be added here
 ```
-
-### Adding Challenges
-
-Each challenge will be a new Move module file in `contracts/sources/`. Challenge modules can:
-- Import the flag module with `use ctf::flag;`
-- Create flags when solved with `flag::new(b"challenge_name".to_string(), ctx)`
-- Access other challenge modules in the same package
 
 ## Moving Window Challenge
 
@@ -116,11 +112,9 @@ Open lootboxes until you get a flag.
 3. Implement your solution in [`scripts/src/lootboxes.ts`](./scripts/src/lootboxes.ts).
 4. Run your script with `pnpm run lootboxes` to extract the flag.
 
-### Hints
+### Hint
 
-1. Every lootbox has a 1 in 100 chance of containing a flag.
-2. Use this [page](https://docs.sui.io/guides/developer/advanced/randomness-onchain#programmable-transaction-block-ptb-restrictions) to learn more about Sui's on-chain randomness. Especially if you are running into this error: `PostRandomCommandRestrictions`
-3. A mistake has been made in the `lootboxes.move` contract regarding the use of the `Random` object.
+Use this [page](https://docs.sui.io/guides/developer/on-chain-primitives/randomness-onchain) to learn more about Sui's on-chain randomness. Especially if you are running into this error: `PostRandomCommandRestrictions`
 
 ## Staking Challenge
 
