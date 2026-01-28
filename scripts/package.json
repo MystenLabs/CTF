@@ -5,7 +5,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "init-keypair": "tsx src/init.ts"
+    "init-keypair": "tsx src/init.ts",
+    "moving-window": "tsx src/moving_window.ts"
   },
   "dependencies": {
     "@mysten/sui": "^1.8.0",

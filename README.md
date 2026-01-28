@@ -4,9 +4,16 @@ Welcome to the Sui Capture the Flag challenge! This CTF is designed to test and 
 
 ## Table of Contents
 - [Sui CTF](#sui-ctf)
-- [Table of Contents](#table-of-contents)
-- [Environment Setup](#environment-setup)
-- [Challenges](#challenges)
+  - [Table of Contents](#table-of-contents)
+  - [Environment Setup](#environment-setup)
+    - [Prerequisites](#prerequisites)
+    - [Setup Instructions](#setup-instructions)
+    - [Funding Your Account](#funding-your-account)
+  - [Challenges](#challenges)
+    - [Structure](#structure)
+    - [Adding Challenges](#adding-challenges)
+  - [Moving Window Challenge](#moving-window-challenge)
+    - [Instructions](#instructions)
 
 ## Environment Setup
 
@@ -69,7 +76,16 @@ Each challenge will be a new Move module file in `contracts/sources/`. Challenge
 - Create flags when solved with `flag::new(b"challenge_name".to_string(), ctx)`
 - Access other challenge modules in the same package
 
-Check back soon for exciting challenges!
+## Moving Window Challenge
+
+Extract the flag during the moving window.
+
+### Instructions
+
+1. Examine the [`moving_window.move`](./contracts/sources/moving_window.move) contract carefully.
+2. Determine when the window is open.
+3. Implement your solution in [`scripts/src/moving_window.ts`](./scripts/src/moving_window.ts).
+4. Run your script with `pnpm run moving-window` to extract the flag.
 
 ---
 
