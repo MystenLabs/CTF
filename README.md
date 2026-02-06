@@ -58,7 +58,7 @@ https://suiscan.xyz/testnet/account/{your-address}
 
 ## Challenges
 
-**Deployed Contract Address:** `0x15341163c434ba66c15cd47dfa915eb2548af9da88b5e735ebda002a0f129692`
+**Deployed Contract Address:** `0x96662054f048469d560c7d5d74b79a44c12f79a8e017e45b1ad85857c6891fdf`
 
 All challenges are Move modules within the single `ctf` package located in the `contracts/` directory.
 
