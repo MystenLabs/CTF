@@ -6,13 +6,13 @@ Welcome to the Sui Capture the Flag challenge! This CTF is designed to test and 
 
 - [Sui CTF](#sui-ctf)
   - [Table of Contents](#table-of-contents)
-  - [Getting Started](#getting-started)
-    - [1. Create Your Own Copy of This Repo](#1-create-your-own-copy-of-this-repo)
+- [Getting Started](#getting-started)
+  - [Create Your Own Copy of This Repo](#create-your-own-copy-of-this-repo)
   - [Environment Setup](#environment-setup)
     - [Prerequisites](#prerequisites)
     - [Setup Instructions](#setup-instructions)
   - [Getting testing credits](#getting-testing-credits)
-  - [Challenges](#challenges)
+- [Challenges](#challenges)
     - [Structure](#structure)
   - [Moving Window Challenge](#moving-window-challenge)
     - [Instructions](#instructions)
@@ -24,9 +24,9 @@ Welcome to the Sui Capture the Flag challenge! This CTF is designed to test and 
   - [Staking Challenge](#staking-challenge)
     - [Instructions](#instructions-3)
 
-## Getting Started
+# Getting Started
 
-### Create Your Own Copy of This Repo
+## Create Your Own Copy of This Repo
 
 > **Important:** Do NOT clone or fork this repository directly. Instead, create a **template copy** so you have your own independent repo to work in.
 
@@ -82,7 +82,7 @@ You can view your account and balance on the Sui Explorer at:
 https://suiscan.xyz/testnet/account/{your-address}
 ```
 
-## Challenges
+# Challenges
 
 **Deployed Contract Address:** `0x96662054f048469d560c7d5d74b79a44c12f79a8e017e45b1ad85857c6891fdf`
 
