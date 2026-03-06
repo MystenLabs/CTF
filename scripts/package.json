@@ -9,7 +9,8 @@
     "moving-window": "tsx src/moving_window.ts",
     "merchant": "tsx src/merchant.ts",
     "lootboxes": "tsx src/lootboxes.ts",
-    "staking": "tsx src/staking.ts"
+    "staking": "tsx src/staking.ts",
+    "sabotage-arena": "tsx src/sabotage_arena.ts"
   },
   "dependencies": {
     "@mysten/sui": "^2.3.0",
