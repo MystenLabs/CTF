@@ -9,18 +9,16 @@ const ENotRegistered: u64 = 1;
 const ECooldownActive: u64 = 2;
 const EShieldBelowThreshold: u64 = 3;
 const ENoFlagsRemaining: u64 = 4;
-const EAlreadyHasFlag: u64 = 5;
-const EArenaClosed: u64 = 6;
-const ECannotAttackSelf: u64 = 7;
+const EArenaClosed: u64 = 5;
+const ECannotAttackSelf: u64 = 6;
 
-public struct AdminCap has key {
+public struct AdminCap has key, store {
   id: UID,
 }
 
 public struct PlayerState has store {
   shield: u64,
   last_action_ms: u64,
-  has_flag: bool,
 }
 
 public struct Arena has key {
@@ -38,8 +36,8 @@ fun init(ctx: &mut TxContext) {
     players: table::new(ctx),
     flags_remaining: 10,
     shield_threshold: 12,
-    cooldown_ms: 60_000,
-    deadline_ms: 1_741_564_800_000, // March 10, 2025 00:00:00 UTC
+    cooldown_ms: 600_000,
+    deadline_ms: 1772974800000, 
   });
 
   transfer::transfer(AdminCap {
@@ -55,7 +53,6 @@ public fun register(arena: &mut Arena, clock: &Clock, ctx: &mut TxContext) {
   arena.players.add(sender, PlayerState {
     shield: 0,
     last_action_ms: 0,
-    has_flag: false,
   });
 }
 
@@ -85,7 +82,7 @@ public fun attack(arena: &mut Arena, target: address, clock: &Clock, ctx: &mut T
   attacker.last_action_ms = now;
 
   let target_state = &mut arena.players[target];
-  target_state.shield = 0;
+  target_state.shield = target_state.shield / 2;
 }
 
 public fun claim_flag(arena: &mut Arena, clock: &Clock, ctx: &mut TxContext): flag::Flag {
@@ -96,9 +93,8 @@ public fun claim_flag(arena: &mut Arena, clock: &Clock, ctx: &mut TxContext): fl
 
   let player = &arena.players[sender];
   assert!(player.shield >= arena.shield_threshold, EShieldBelowThreshold);
-  assert!(!player.has_flag, EAlreadyHasFlag);
 
-  let PlayerState { shield: _, last_action_ms: _, has_flag: _ } = arena.players.remove(sender);
+  let PlayerState { .. } = arena.players.remove(sender);
   arena.flags_remaining = arena.flags_remaining - 1;
 
   flag::new(b"sabotage_arena".to_string(), ctx)
@@ -113,10 +109,7 @@ public fun admin_distribute(
   assert!(arena.players.contains(recipient), ENotRegistered);
   assert!(arena.flags_remaining > 0, ENoFlagsRemaining);
 
-  let player = &arena.players[recipient];
-  assert!(!player.has_flag, EAlreadyHasFlag);
-
-  let PlayerState { shield: _, last_action_ms: _, has_flag: _ } = arena.players.remove(recipient);
+  let PlayerState { .. } = arena.players.remove(recipient);
   arena.flags_remaining = arena.flags_remaining - 1;
 
   transfer::public_transfer(flag::new(b"sabotage_arena".to_string(), ctx), recipient);

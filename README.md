@@ -23,6 +23,8 @@ Welcome to the Sui Capture the Flag challenge! This CTF is designed to test and 
     - [Hints](#hints)
   - [Staking Challenge](#staking-challenge)
     - [Instructions](#instructions-3)
+  - [Sabotage Arena Challenge (PvP)](#sabotage-arena-challenge-pvp)
+    - [Instructions](#instructions-4)
 
 # Getting Started
 
@@ -84,7 +86,9 @@ https://suiscan.xyz/testnet/account/{your-address}
 
 # Challenges
 
-**Deployed Contract Address:** `0x96662054f048469d560c7d5d74b79a44c12f79a8e017e45b1ad85857c6891fdf`
+**Deployed Contract Address:** `0xd56e5075ba297f9e37085a37bb0abba69fabdf9987f8f4a6086a3693d88efbfd`
+
+**Transaction Digest:** `AL133Jj44NV9euC6RreY1gjGHmCMwqfTcuKn6bbrKGqY`
 
 All challenges are Move modules within the single `ctf` package located in the `contracts/` directory.
 
@@ -163,6 +167,16 @@ Stake SUI tokens to earn the right to claim a flag.
 2. Understand the staking requirements: you must stake a minimum of 1 SUI for at least 1 week (168 hours).
 3. Implement your solution in `[scripts/src/staking.ts](./scripts/src/staking.ts)`.
 4. Run your script with `pnpm staking` to extract the flag.
+
+## Sabotage Arena Challenge (PvP)
+
+Compete against other players to build your shield to the threshold and claim a flag — while sabotaging others along the way.
+
+### Instructions
+
+1. Examine the `[sabotage_arena.move](./contracts/sources/sabotage_arena.move)` contract carefully.
+2. Register, build your shield, and attack opponents using `[scripts/src/sabotage_arena.ts](./scripts/src/sabotage_arena.ts)`.
+3. Implement your solution to reach the shield threshold and claim a flag.
 
 ---
 
