@@ -25,6 +25,7 @@ Welcome to the Sui Capture the Flag challenge! This CTF is designed to test and 
     - [Instructions](#instructions-3)
   - [Sabotage Arena Challenge (PvP)](#sabotage-arena-challenge-pvp)
     - [Instructions](#instructions-4)
+- [Submission](#submission)
 
 # Getting Started
 
@@ -177,6 +178,13 @@ Compete against other players to build your shield to the threshold and claim a 
 1. Examine the `[sabotage_arena.move](./contracts/sources/sabotage_arena.move)` contract carefully.
 2. Register, build your shield, and attack opponents using `[scripts/src/sabotage_arena.ts](./scripts/src/sabotage_arena.ts)`.
 3. Implement your solution to reach the shield threshold and claim a flag.
+
+## Submission
+
+To submit your CTF solutions, please use [DeepSurge](https://www.deepsurge.xyz/), our hackathon platform.
+
+1. **Register** on [DeepSurge](https://www.deepsurge.xyz/) and join the hackathon you're participating in.
+2. **Submit your project** through the platform, including your GitHub repository and any other required details.
 
 ---
 
