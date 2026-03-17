@@ -37,7 +37,7 @@ fun init(ctx: &mut TxContext) {
     flags_remaining: 10,
     shield_threshold: 12,
     cooldown_ms: 600_000,
-    deadline_ms: 1772974800000, 
+    deadline_ms: 1773547200000,
   });
 
   transfer::transfer(AdminCap {
